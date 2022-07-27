@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
@@ -71,6 +72,12 @@ public class GameMenu : MonoBehaviour
         playerState.ChangeSound(v == 1);
 
         UpdateSound();
+    }
+
+    public void ResetGame()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(0);
     }
 
     public void SwitchMusic()
